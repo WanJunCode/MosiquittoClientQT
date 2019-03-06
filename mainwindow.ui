@@ -17,22 +17,22 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>100</y>
+      <x>190</x>
+      <y>210</y>
       <width>89</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>publish</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="messageLine">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>30</y>
-      <width>331</width>
+      <x>120</x>
+      <y>180</y>
+      <width>221</width>
       <height>21</height>
      </rect>
     </property>
@@ -47,6 +47,12 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMQTT_BY_WJ">
+    <property name="title">
+     <string>MQTT BY WJ</string>
+    </property>
+   </widget>
+   <addaction name="menuMQTT_BY_WJ"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
