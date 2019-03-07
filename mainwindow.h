@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <mosquitto.h>
+#include "mosquittop.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,7 +24,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    struct mosquitto *mqtt_;
+    mosquittop *mqtt_;
 };
 
 #endif // MAINWINDOW_H

@@ -6,37 +6,38 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    mqtt_ = NULL;
     ui->setupUi(this);
-    mosquitto_lib_init();
-    mqtt_ = mosquitto_new("wanjun",true,NULL);
-    const char *will = "hello this is will";
-    int err = mosquitto_will_set(mqtt_,"wanjun_topic",strlen(will),will,1,false);
-    err = mosquitto_connect(mqtt_,"localhost",1883,60);
-    if(err == MOSQ_ERR_SUCCESS){
-        qDebug()<<"mosquitto connect successful"<<endl;
-    }
 }
 
 MainWindow::~MainWindow()
 {
-    qDebug()<<"destructure"<<endl;
-    mosquitto_disconnect(mqtt_);
-    mosquitto_destroy(mqtt_);
-    mosquitto_lib_cleanup();
+    delete mqtt_;
     delete ui;
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-    auto message = ui->messageLine->text().toStdString();
-    auto topic = ui->topicLine->text().toStdString();
-
-    int messageId = 0;
-    mosquitto_publish(mqtt_,&messageId,topic.data(),message.length(),message.data(),1,true);
-    ui->messageLine->clear();
+    if(mqtt_){
+        auto message = ui->messageLine->text().toStdString();
+        auto topic = ui->topicLine->text().toStdString();
+        int err = mqtt_->publish(topic,message);
+        if(err == MOSQ_ERR_SUCCESS){
+            qDebug()<<"publih ok"<<endl;
+        }
+    }
 }
 
 void MainWindow::on_linkButton_clicked()
 {
-
+    if(mqtt_ == NULL){
+        auto ip = ui->ipAddress->text().toStdString();
+        auto port = ui->portLine->text().toInt();
+        auto id = ui->idLine->text().toStdString();
+        mqtt_ = new mosquittop(ip,port,id);
+        mqtt_->setWill("this is a will");
+        mqtt_->connect();
+    }else{
+        qDebug()<<"have had a mqtt client"<<endl;
+    }
 }

@@ -27,10 +27,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    mosquittop.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    mosquittop.h
 
 FORMS += \
         mainwindow.ui
