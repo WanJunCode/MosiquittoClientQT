@@ -28,13 +28,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    auto msg = ui->messageLine->text();
-    qDebug()<<"test"<<endl;
+    auto message = ui->messageLine->text().toStdString();
+    auto topic = ui->topicLine->text().toStdString();
 
     int messageId = 0;
-    const char *message = msg.toLatin1().data();
-    if(message != NULL){
-        mosquitto_publish(mqtt_,&messageId,"wanjun_topic",strlen(message),message,1,true);
-    }
+    mosquitto_publish(mqtt_,&messageId,topic.data(),message.length(),message.data(),1,true);
     ui->messageLine->clear();
+}
+
+void MainWindow::on_linkButton_clicked()
+{
+
 }
