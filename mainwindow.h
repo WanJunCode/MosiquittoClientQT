@@ -23,8 +23,12 @@ private slots:
     void on_linkButton_clicked();
 
 private:
+    bool activePublish() const;
+
+private:
     Ui::MainWindow *ui;
     mosquittop *mqtt_;
+    bool isConnect;
 };
 
 #endif // MAINWINDOW_H

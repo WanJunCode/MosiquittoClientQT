@@ -17,8 +17,16 @@ public:
         ipAddress_ = ip;
     }
 
+    inline std::string getAddress() const{
+        return ipAddress_;
+    }
+
     inline void setPort(int port){
         port_ = port;
+    }
+
+    inline int getPort() const{
+        return port_;
     }
 
     inline void setKeep(int keep){
@@ -29,9 +37,9 @@ public:
         cleanSession_ = clean;
     }
 
-    inline void setWill(std::string will){
+    inline void setWill(std::string will,std::string topic){
         will_ = will;
-        mosquitto_will_clear(will_);
+        mosquitto_will_set(mqtt_,topic.data(),will.length(),will.data(),0,false);
     }
 
     std::string getWill(){

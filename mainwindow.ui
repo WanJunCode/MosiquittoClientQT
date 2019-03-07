@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>595</width>
-    <height>377</height>
+    <width>1032</width>
+    <height>494</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>240</y>
+      <x>350</x>
+      <y>360</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QLineEdit" name="messageLine">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>180</y>
+      <x>310</x>
+      <y>280</y>
       <width>221</width>
       <height>30</height>
      </rect>
@@ -40,8 +40,8 @@
    <widget class="QLineEdit" name="ipAddress">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>30</y>
+      <x>310</x>
+      <y>80</y>
       <width>141</width>
       <height>30</height>
      </rect>
@@ -53,8 +53,8 @@
    <widget class="QLineEdit" name="portLine">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>30</y>
+      <x>520</x>
+      <y>80</y>
       <width>113</width>
       <height>30</height>
      </rect>
@@ -66,23 +66,23 @@
    <widget class="QPushButton" name="linkButton">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>90</y>
+      <x>390</x>
+      <y>150</y>
       <width>89</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>link</string>
+     <string>connect</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="idLine">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>131</width>
-      <height>30</height>
+      <x>140</x>
+      <y>80</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -92,8 +92,8 @@
    <widget class="QLineEdit" name="topicLine">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>180</y>
+      <x>160</x>
+      <y>280</y>
       <width>121</width>
       <height>30</height>
      </rect>
@@ -102,22 +102,120 @@
      <string>wanjun/topic</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>id</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>50</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ip</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>50</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>port</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>250</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>topic</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>250</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>message</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="statusLable">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>150</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>未连接</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="willLine">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>80</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>this is will</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>50</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>will</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>595</width>
+     <width>1032</width>
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMQTT_BY_WJ">
-    <property name="title">
-     <string>MQTT BY WJ</string>
-    </property>
-   </widget>
-   <addaction name="menuMQTT_BY_WJ"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
